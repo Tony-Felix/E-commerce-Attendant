@@ -1,2 +1,2 @@
 # E-commerce-Attendant
-Atendente de loja online juntando Flask e IA generativa e Langflow.
+Atendente de loja online que mistura Flask, IA generativa e Langflow.
