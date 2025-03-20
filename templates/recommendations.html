@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+     <meta charset="UTF-8">
+     <title>Recomendar Produtos</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+ </head>
+ <body>
+     <h1>Recomendar Produtos Personalizados</h1>
+     <form method="POST">
+         <label for="preferences">Suas Preferências (Categoria):</label>
+         <input type="text" id="preferences" name="preferences" required>
+         <input type="submit" value="Recomendar">
+     </form>
+     {% if recommendations %}
+         <h2>Recomendações:</h2>
+         {% if recommendations is string %}
+             <p>{{ recommendations }}</p>
+         {% else %}
+             <ul>
+                 {% for product in recommendations %}
+                     <li>
+                         <strong>{{ product.name }}</strong>
+                         {{ product.description }}
+                         Preço: R${{ product.price }}
+                     </li>
+                 {% endfor %}
+             </ul>
+         {% endif %}
+     {% endif %}
+     <a href="/">Voltar ao Dashboard</a>
+ </body>
+ </html>

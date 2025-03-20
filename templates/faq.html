@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Responder FAQs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <h1>Responder a Perguntas Frequentes</h1>
+    <form method="POST">
+        <label for="question">Sua Pergunta:</label>
+        <input type="text" id="question" name="question" required>
+        <input type="submit" value="Responder">
+    </form>
+    {% if response %}
+        <h2>Resposta:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+    <a href="/">Voltar ao Dashboard</a>
+</body>
+</html>
